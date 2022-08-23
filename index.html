@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Niyantrana</title>
+    <meta charset="utf-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center mb-5 font-weight-bold logo">Niyantrana</h1>
+      <div class="row justify-content-center">
+        <div class="col-md-6 d-none">
+          <video class="input_video" width="100%"></video>
+          <h3 class="text-center">Input</h3>
+        </div>
+        <div class="col-md-6 w-full" width="100%">
+          <div class="output_canvas_wrapper">
+            <canvas class="output_canvas" width="640px" height="360px"></canvas>
+          </div>
+          <p class="text-center text-uppercase font-weight-bold caption mt-2">
+            Tracked
+          </p>
+          <div id="debug"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pointer"></div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
