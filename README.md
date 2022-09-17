@@ -22,6 +22,6 @@ or
 yarn install && yarn dev
 ```
 **Setup to run on python**
-``
+```
 python ./cont.py
 ```
