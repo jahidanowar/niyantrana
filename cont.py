@@ -1,4 +1,3 @@
-
 import cv2
 import mediapipe as mp
 import pyautogui
@@ -45,32 +44,9 @@ class HLabel(IntEnum):
 
 # Convert Mediapipe Landmarks to recognizable Gestures
 class HandRecog:
-    """
-    Convert Mediapipe Landmarks to recognizable Gestures.
-    """
-    
-    def __init__(self, hand_label):
-        """
-        Constructs all the necessary attributes for the HandRecog object.
-        Parameters
-        ----------
-            finger : int
-                Represent gesture corresponding to Enum 'Gest',
-                stores computed gesture for current frame.
-            ori_gesture : int
-                Represent gesture corresponding to Enum 'Gest',
-                stores gesture being used.
-            prev_gesture : int
-                Represent gesture corresponding to Enum 'Gest',
-                stores gesture computed for previous frame.
-            frame_count : int
-                total no. of frames since 'ori_gesture' is updated.
-            hand_result : Object
-                Landmarks obtained from mediapipe.
-            hand_label : int
-                Represents multi-handedness corresponding to Enum 'HLabel'.
-        """
+   # Convert Mediapipe Landmarks to recognizable Gestures.
 
+    def __init__(self, hand_label):
         self.finger = 0
         self.ori_gesture = Gest.PALM
         self.prev_gesture = Gest.PALM
