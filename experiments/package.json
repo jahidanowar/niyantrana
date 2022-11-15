@@ -1,0 +1,8 @@
+{
+  "name": "niyantrana",
+  "version": "1.0.0",
+  "description": "a computervision controller",
+  "main": "index.js",
+  "author": "Jahid Anowar",
+  "license": "MIT"
+}

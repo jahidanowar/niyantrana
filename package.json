@@ -1,8 +1,22 @@
 {
   "name": "niyantrana",
   "version": "1.0.0",
-  "description": "a computervision controller",
-  "main": "index.js",
-  "author": "Jahid Anowar",
-  "license": "MIT"
+  "description": "an ai virtual mouse",
+  "main": "main.js",
+  "repository": "https://github.com/jahidanowar/niyantrana.git",
+  "author": "Jahid <hello@jahid.dev>",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^21.2.3"
+  },
+  "dependencies": {
+    "@mediapipe/camera_utils": "^0.3.1640029074",
+    "@mediapipe/control_utils": "^0.6.1629159505",
+    "@mediapipe/drawing_utils": "^0.3.1620248257",
+    "@mediapipe/hands": "^0.4.1646424915",
+    "robotjs": "^0.6.0"
+  }
 }

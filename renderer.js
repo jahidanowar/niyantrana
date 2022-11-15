@@ -1,3 +1,6 @@
+const information = document.getElementById("info");
+information.innerText = `This app is using Chrome (v${versions.chrome()}), Node.js (v${versions.node()}), and Electron (v${versions.electron()})`;
+
 const videoElement = document.getElementsByClassName("input_video")[0];
 const canvasElement = document.getElementsByClassName("output_canvas")[0];
 const pointerElement = document.getElementById("pointer");
@@ -5,8 +8,8 @@ const debugElement = document.getElementById("debug");
 const canvasCtx = canvasElement.getContext("2d");
 const clickSound = new Audio("./assets/audio/click.wav");
 
-function onResults(results) {
-  console.log(results.multiHandLandmarks);
+async function onResults(results) {
+  //   console.log(results.multiHandLandmarks);
   const hand = results.multiHandLandmarks[0] || null;
   const indexFinger = hand && hand.length > 0 ? hand[8] : null;
   const middleFinger = hand && hand.length > 0 ? hand[12] : null;
@@ -20,7 +23,8 @@ function onResults(results) {
     // Calculate the angle between the index finger and the middle finger.
     const angle = Math.atan2(y2 - y1, x2 - x1);
     const angleDeg = (angle * 180) / Math.PI;
-    pointerElement.style.transform = `rotate(${angleDeg}deg)`;
+
+    // pointerElement.style.transform = `rotate(${angleDeg}deg)`;
 
     // Calculate the distance between the index finger and the middle finger.
 
@@ -34,17 +38,21 @@ function onResults(results) {
         <div> Distance: ${distance * 100}</div>
      </dvi>`;
 
-    // Move mouse based on index finger tip
-    pointerElement.style.right = `${x1 * 100}%`;
-    pointerElement.style.top = `${y1 * 100}%`;
+    // Move the mouse pointer to the index finger position.
+    await robot.moveMouse(x1, y1);
 
     // Only move the pointer if the distance is less than 8 i:e both finger touching.
     if (distance * 100 < 5.0) {
+      console.log({
+        distance: distance * 100,
+      });
       // Change the color of the pointer to red.
       pointerElement.style.backgroundColor = "red";
       pointerElement.innerText = "Click";
       // PLay Click Sound
-      clickSound.play();
+      //   clickSound.play();
+
+      robot.mouseClick();
     } else {
       // Change the color of the pointer to green.
       pointerElement.style.backgroundColor = "green";
@@ -78,6 +86,7 @@ function onResults(results) {
 
 const hands = new Hands({
   locateFile: (file) => {
+    // console.log({ file });
     return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
   },
 });
