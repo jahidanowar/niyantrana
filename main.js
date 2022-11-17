@@ -13,22 +13,22 @@ const createWindow = () => {
   });
   // robot.setMouseDelay(1);
   ipcMain.on("moveMouse", (event, x, y) => {
-    // robot.moveMouse(x * 100, y * 100);
-    // console.log(x * 100, y * 100);
-
     // robot.moveMouseSmooth(x * 100, y * 100);
 
     const screensize = robot.getScreenSize();
 
-    const x1 = Math.round(x * screensize.width);
-    const y1 = Math.round(y * screensize.height);
+    x = x * 100;
+    y = y * 100;
 
-    console.log(x1, y1);
+    // x1 is the x percentage of the screen width
+    // y1 is the y percentage of the screen height
+    const x1 = Math.round((x / 100) * screensize.width);
+    const y1 = Math.round((y / 100) * screensize.height);
 
     // Smoothly move the mouse across the screen.
-    robot.moveMouseSmooth(x1, y1);
+    // robot.moveMouseSmooth(x1, y1);
 
-    // robot.moveMouse(x1, y1);
+    robot.moveMouse(x1, y1);
   });
 
   ipcMain.on("mouseClick", (event) => {
@@ -41,3 +41,14 @@ const createWindow = () => {
 };
 
 app.whenReady().then(createWindow);
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
+  }
+});
+
+app.on("activate", () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow();
+  }
+});
