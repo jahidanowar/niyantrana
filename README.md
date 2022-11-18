@@ -48,6 +48,12 @@ npm install
 python3 main.py
 ```
 
+## Demo
+
+https://user-images.githubusercontent.com/43274356/202783133-2b7a92ca-ab6d-44a6-8809-7fb43e296427.mp4
+
+
+
 ## Contributors
 
 - [Jahid A](https://jahid.dev)
