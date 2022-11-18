@@ -13,6 +13,32 @@ NIYANTRANA is a virtual controller which uses computer vision to detect the user
 - Numpy 1.19.1
 - PyAutoGUI 0.9.52
 
+## Requirements for Electron App
+
+- Node.js >12.18.3
+- Electron 9.1.0
+- Electron Builder 22.7.0
+
+## Installation
+
+### Python
+
+- Install Python 3.8 from [here](https://www.python.org/downloads/)
+- Install the required packages using the following command
+
+```bash
+pip install -r requirements.txt
+```
+
+### Electron App
+
+- Install Node.js from [here](https://nodejs.org/en/download/)
+- Install the required packages using the following command
+
+```bash
+npm install
+```
+
 ## Usage
 
 - Clone the repository
@@ -24,6 +50,6 @@ python3 main.py
 
 ## Contributors
 
-- [Jahid A]()
+- [Jahid A](https://jahid.dev)
 
 - [Prasanta K M]()

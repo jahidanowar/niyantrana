@@ -1,0 +1,4 @@
+numpy>=1.15.0
+OpenCV>=4.4.0
+Numpy>=1.19.1
+PyAutoGUI>=0.9.52
