@@ -14,6 +14,8 @@ async function onResults(results) {
   const indexFinger = hand && hand.length > 0 ? hand[8] : null;
   const middleFinger = hand && hand.length > 0 ? hand[12] : null;
 
+  console.log(results);
+
   // Change the pointer position to the index finger position.
   //   console.log(indexFinger);
   if (indexFinger && middleFinger) {
@@ -52,7 +54,7 @@ async function onResults(results) {
       // PLay Click Sound
       //   clickSound.play();
 
-      // robot.mouseClick();
+      robot.mouseClick();
     } else {
       // Change the color of the pointer to green.
       pointerElement.style.backgroundColor = "green";
@@ -102,7 +104,7 @@ const camera = new Camera(videoElement, {
   onFrame: async () => {
     await hands.send({ image: videoElement });
   },
-  width: 1920,
-  height: 1080,
+  width: 640,
+  height: 480,
 });
 camera.start();

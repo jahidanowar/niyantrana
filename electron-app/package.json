@@ -17,6 +17,8 @@
     "@mediapipe/control_utils": "^0.6.1629159505",
     "@mediapipe/drawing_utils": "^0.3.1620248257",
     "@mediapipe/hands": "^0.4.1646424915",
+    "everpolate": "^0.0.3",
+    "jsnumpy": "^1.1.10",
     "robotjs": "^0.6.0"
   }
 }
