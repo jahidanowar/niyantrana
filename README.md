@@ -4,7 +4,7 @@ A computer vision based virtual controller
 
 ## Introduction
 
-NIYANTRANA is a virtual controller which uses computer vision to detect the user's hand and track the movement of the fingers. It is a project which is developed as a part of the course MSCSA - Project at Christ Universirt.
+NIYANTRANA is a virtual controller which uses computer vision to detect the user's hand and track the movement of the fingers. It is a project which is developed as a part of the course MSCSA - Project at Christ Universirty.
 
 ## Requirements
 
